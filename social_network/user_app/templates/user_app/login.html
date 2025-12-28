@@ -1,0 +1,17 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Логін</title>
+</head>
+<body>
+    <h1>Логін</h1>
+    <form method="post">
+        {% csrf_token %}
+        <p><input type="text" placeholder="Логін" name="username"></p>
+        <p><input type="password" placeholder="Пароль" name="password"></p>
+        <p><button>Увійти</button></p>
+        <p>{{error}}</p>
+    </form>
+</body>
+</html>
