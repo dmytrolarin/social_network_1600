@@ -46,7 +46,6 @@ def render_login(request: HttpRequest):
         context=context
         )
 
-
 def render_welcome(request: HttpRequest):
     if request.user.is_authenticated:
         return render(
@@ -60,4 +59,10 @@ def render_welcome(request: HttpRequest):
 def logout_user(request: HttpRequest):
     logout(request)
     return redirect("login")
-    
+
+
+def render_admin(request: HttpRequest):
+    if request.user.username != 'admin':
+        return redirect('login')
+    else:
+        return render(request, 'user_app/admin.html')
