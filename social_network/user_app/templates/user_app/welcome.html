@@ -6,6 +6,7 @@
     </head>
     <body>
         <h1>Привiт, {{user.username}}</h1>
+        <h2>Автобіографія: {{ user.profile.about_me }}</h2>
         <a href="{% url 'logout' %}">Вийти</a>
     </body>
 </html>
