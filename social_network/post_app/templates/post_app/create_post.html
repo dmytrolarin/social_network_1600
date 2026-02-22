@@ -1,23 +1,31 @@
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Створити пост</title>
-</head>
-<body>
+  </head>
+  <body>
     <h1>Створити пост</h1>
     <form method="post" enctype="multipart/form-data">
-        {% csrf_token %}
-        <div>
-            <input type="text" placeholder="title" name="title" required>
-        </div>
-        <div>
-            <textarea name="content" placeholder="content" required></textarea>
-        </div>
-        <div>
-            <input type="file" accept="image/*" name="image">
-        </div>
-        
+      {% csrf_token %}
+      <div>
+        <input type="text" placeholder="title" name="title" required />
+      </div>
+      <div>
+        <textarea name="content" placeholder="content" required></textarea>
+      </div>
+      <div>
+        <input type="file" accept="image/*" name="image" />
+      </div>
+      <div>
+        <label for="tags">Оберіть теги</label>
+        <select name="" id="tags" multiple>
+          {% for tag in tags %}
+            <option value="">{{tag.name}}</option>
+          {% endfor %}
+        </select>
+      </div>
+      <button>Створити пост</button>
     </form>
-</body>
+  </body>
 </html>

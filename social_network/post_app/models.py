@@ -7,7 +7,6 @@ class Post(models.Model):
     content = models.TextField()
     image = models.ImageField(upload_to='images/posts')
     author = models.ForeignKey(Profile, on_delete= models.CASCADE)
-
     tags = models.ManyToManyField('Tag', related_name='posts')
 
     def __str__(self):
