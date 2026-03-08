@@ -9,3 +9,8 @@ class PostForm(forms.Form):
     tags = forms.ModelMultipleChoiceField(
         queryset= Tag.objects.all(),
     )
+    
+class TagForm(forms.ModelForm):
+    class Meta:
+        model = Tag
+        fields = '__all__'
